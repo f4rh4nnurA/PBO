@@ -13,9 +13,9 @@ public class Cuaca {
         String[] kondisiList = { "Cerah", "Mendung", "Hujan", "Badai" };
         Random rand = new Random();
         kondisi = kondisiList[rand.nextInt(kondisiList.length)];
-        suhu = 20 + rand.nextDouble() * 15; // Suhu antara 20°C hingga 35°C
-        curahHujan = rand.nextDouble() * 100; // Curah hujan antara 0mm hingga 100mm
-        kelembaban = 30 + rand.nextDouble() * 70; // Kelembaban antara 30% hingga 100%
+        suhu = 20 + rand.nextDouble() * 15;
+        curahHujan = rand.nextDouble() * 100;
+        kelembaban = 30 + rand.nextDouble() * 70;
     }
 
     public void tampilkanCuaca() {
@@ -24,17 +24,5 @@ public class Cuaca {
 
     public String getKondisi() {
         return kondisi;
-    }
-
-    public double getSuhu() {
-        return suhu;
-    }
-
-    public double getCurahHujan() {
-        return curahHujan;
-    }
-
-    public double getKelembaban() {
-        return kelembaban;
     }
 }

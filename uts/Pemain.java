@@ -1,47 +1,44 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pemain {
+class Pemain {
     private int uang;
-    private int energi;
-    private List<String> inventori;
+    private List<Tanaman> inventori;
 
-    public Pemain(int uang, int energi) {
-        this.uang = uang;
-        this.energi = energi;
+    public Pemain(int uangAwal) {
+        this.uang = uangAwal;
         this.inventori = new ArrayList<>();
     }
 
-    public void tambahInventori(String item) {
-        inventori.add(item);
-        System.out.println(item + " ditambahkan ke inventori.");
+    public void tambahInventori(Tanaman tanaman) {
+        inventori.add(tanaman);
+        System.out.println(tanaman.getNama() + " ditambahkan ke inventori.");
     }
 
     public void kurangiUang(int jumlah) {
         uang -= jumlah;
+        System.out.println("Uang berkurang, sisa uang: " + uang);
     }
 
     public void tambahUang(int jumlah) {
         uang += jumlah;
+        System.out.println("Uang bertambah, jumlah uang sekarang: " + uang);
     }
 
     public int getUang() {
         return uang;
     }
 
-    public int getEnergi() {
-        return energi;
-    }
-
-    public void kurangiEnergi(int jumlah) {
-        energi -= jumlah;
-    }
-
-    public void tambahEnergi(int jumlah) {
-        energi += jumlah;
-    }
-
     public void tampilkanInventori() {
-        System.out.println("Inventori: " + inventori);
+        System.out.println("Inventori: ");
+        int index = 1;
+        for (Tanaman tanaman : inventori) {
+            System.out.println(index + ". " + tanaman.getNama() + ", hari untuk panen: " + tanaman.getHariTumbuh());
+            index++;
+        }
+    }
+
+    public List<Tanaman> getInventori() {
+        return inventori;
     }
 }
